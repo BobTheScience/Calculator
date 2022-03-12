@@ -1,12 +1,11 @@
-var equation = false
+let equation = false;
 
 function type1() {
   if (equation == true) {
     document.getElementById("answer").innerText = String(document.getElementById("answer").innerText) + " 1";
-  }
-  else {
+  } else {
     document.getElementById("answer").innerText = String(document.getElementById("answer").innerText) + "1";
-    }
+  }
   document.getElementById("temporary").innerText = "";
   equation = false;
 }
@@ -14,8 +13,7 @@ function type1() {
 function type2() {
   if (equation == true) {
     document.getElementById("answer").innerText = String(document.getElementById("answer").innerText) + " 2";
-  }
-  else {
+  } else {
     document.getElementById("answer").innerText = String(document.getElementById("answer").innerText) + "2";
   }
   document.getElementById("temporary").innerText = "";
@@ -25,8 +23,7 @@ function type2() {
 function type3() {
   if (equation == true) {
     document.getElementById("answer").innerText = String(document.getElementById("answer").innerText) + " 3";
-  }
-  else {
+  } else {
     document.getElementById("answer").innerText = String(document.getElementById("answer").innerText) + "3";
   }
   document.getElementById("temporary").innerText = "";
@@ -36,8 +33,7 @@ function type3() {
 function type4() {
   if (equation == true) {
     document.getElementById("answer").innerText = String(document.getElementById("answer").innerText) + " 4";
-  }
-  else {
+  } else {
     document.getElementById("answer").innerText = String(document.getElementById("answer").innerText) + "4";
   }
   document.getElementById("temporary").innerText = "";
@@ -47,8 +43,7 @@ function type4() {
 function type5() {
   if (equation == true) {
     document.getElementById("answer").innerText = String(document.getElementById("answer").innerText) + " 5";
-  }
-  else {
+  } else {
     document.getElementById("answer").innerText = String(document.getElementById("answer").innerText) + "5";
   }
   document.getElementById("temporary").innerText = "";
@@ -58,8 +53,7 @@ function type5() {
 function type6() {
   if (equation == true) {
     document.getElementById("answer").innerText = String(document.getElementById("answer").innerText) + " 6";
-  }
-  else {
+  } else {
     document.getElementById("answer").innerText = String(document.getElementById("answer").innerText) + "6";
   }
   document.getElementById("temporary").innerText = "";
@@ -69,8 +63,7 @@ function type6() {
 function type7() {
   if (equation == true) {
     document.getElementById("answer").innerText = String(document.getElementById("answer").innerText) + "7";
-  }
-  else {
+  } else {
     document.getElementById("answer").innerText = String(document.getElementById("answer").innerText) + "7";
   }
   document.getElementById("temporary").innerText = "";
@@ -80,8 +73,7 @@ function type7() {
 function type8() {
   if (equation == true) {
     document.getElementById("answer").innerText = String(document.getElementById("answer").innerText) + " 8";
-  }
-  else {
+  } else {
     document.getElementById("answer").innerText = String(document.getElementById("answer").innerText) + "8";
   }
   document.getElementById("temporary").innerText = "";
@@ -91,8 +83,7 @@ function type8() {
 function type9() {
   if (equation == true) {
     document.getElementById("answer").innerText = String(document.getElementById("answer").innerText) + " 9";
-  }
-  else {
+  } else {
     document.getElementById("answer").innerText = String(document.getElementById("answer").innerText) + "9";
   }
   document.getElementById("temporary").innerText = "";
@@ -102,8 +93,7 @@ function type9() {
 function type0() {
   if (equation == true) {
     document.getElementById("answer").innerText = String(document.getElementById("answer").innerText) + " 0";
-  }
-  else {
+  } else {
     document.getElementById("answer").innerText = String(document.getElementById("answer").innerText) + "0";
   }
   document.getElementById("temporary").innerText = "";
@@ -160,24 +150,24 @@ function typeright() {
   equation = false;
 }
 
-// function clear() {
-//   document.getElementById("temporary").innerText = "0";
-//   document.getElementById("answer").innerText = "";
-// }
+function clearAnswer() {
+  document.getElementById("temporary").innerText = "0";
+  document.getElementById("answer").innerText = "";
+}
 
-// function backspace() {
-//   var stora = String(document.getElementById("answer").innerText)
-//   document.getElementById("answer").innerText = stora[0,-2]
-// }
+function backspace() {
+  let tempAnswer = document.getElementById("answer").innerText;
+  document.getElementById("answer").innerText = tempAnswer.substring(0, tempAnswer.length-1);
+}
 
 function calculate() {
   document.getElementById("calculation").innerText = document.getElementById("answer").innerText;
   if (document.getElementById("answer").innerText != "") {
     document.getElementById("temporary2").innerText = "";
   }
-  // var t = -1;
-  // var stora = String(document.getElementById("answer").innerText);
-  // var later = String(document.getElementById("answer").innerText);
+  // let t = -1;
+  // let stora = String(document.getElementById("answer").innerText);
+  // let later = String(document.getElementById("answer").innerText);
   // for (i in stora) {
   //   t += 1;
   //   if (i == "÷") {
