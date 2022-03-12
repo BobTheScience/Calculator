@@ -112,6 +112,7 @@ function type0() {
 
 function typeplus() {
   document.getElementById("answer").innerText = String(document.getElementById("answer").innerText) + " +";
+  document.getElementById("temporary").innerText = "";
   equation = true;
 }
 
@@ -119,36 +120,73 @@ function typeplus() {
 function typeminus() {
   document.getElementById("answer").innerText = String(document.getElementById("answer").innerText) + " -";
   document.getElementById("answer").innerText = String(document.getElementById("answer").innerText) + " ";
+  document.getElementById("temporary").innerText = "";
   equation = true;
 }
 
 function typetimes() {
-  document.getElementById("answer").innerText = String(document.getElementById("answer").innerText) + " x";
+  document.getElementById("answer").innerText = String(document.getElementById("answer").innerText) + " *";
   document.getElementById("answer").innerText = String(document.getElementById("answer").innerText) + " ";
+  document.getElementById("temporary").innerText = "";
   equation = true;
 }
 
 function typedivide() {
-  document.getElementById("answer").innerText = String(document.getElementById("answer").innerText) + " ÷";
+  document.getElementById("answer").innerText = String(document.getElementById("answer").innerText) + " /";
   document.getElementById("answer").innerText = String(document.getElementById("answer").innerText) + " ";
+  document.getElementById("temporary").innerText = "";
   equation = true;
 }
 
-function calculate() {
-  document.getElementById("calculation").innerText = document.getElementById("answer").innerText;
-  var stora = "";
-  const stuff = [];
-  for (i in document.getElementById("answer")) {
-    if (i === " ") {
-      stuff.push(String(stora));
-      var stora = "";
-    }
-    else {
-      stora = String(stora) + String(i);
-    }
-}
-document.getElementById("temporary2").innerText = "";
-document.getElementById("answer").innerText = stuff;
+function typeleft() {
+  if (equation == true) {
+    document.getElementById("answer").innerText = String(document.getElementById("answer").innerText) + " (";
+  }
+  else {
+    document.getElementById("answer").innerText = String(document.getElementById("answer").innerText) + "(";
+  }
+  document.getElementById("temporary").innerText = "";
+  equation = false;
 }
 
-// I don't know how to make a list and how to add it
+function typeright() {
+  if (equation == true) {
+    document.getElementById("answer").innerText = String(document.getElementById("answer").innerText) + " )";
+  }
+  else {
+    document.getElementById("answer").innerText = String(document.getElementById("answer").innerText) + ")";
+  }
+  document.getElementById("temporary").innerText = "";
+  equation = false;
+}
+
+// function clear() {
+//   document.getElementById("temporary").innerText = "0";
+//   document.getElementById("answer").innerText = "";
+// }
+
+// function backspace() {
+//   var stora = String(document.getElementById("answer").innerText)
+//   document.getElementById("answer").innerText = stora[0,-2]
+// }
+
+function calculate() {
+  document.getElementById("calculation").innerText = document.getElementById("answer").innerText;
+  if (document.getElementById("answer").innerText != "") {
+    document.getElementById("temporary2").innerText = "";
+  }
+  // var t = -1;
+  // var stora = String(document.getElementById("answer").innerText);
+  // var later = String(document.getElementById("answer").innerText);
+  // for (i in stora) {
+  //   t += 1;
+  //   if (i == "÷") {
+  //     later[t] = "/";
+  //   }
+  //   if (i == "x") {
+  //     later = later[0,t] + "*" + later[t + 1, -1]
+  //   }
+  // }
+  document.getElementById("answer").innerText = eval(String(document.getElementById("answer").innerText));
+  document.getElementById("temporary").innerText = "";
+}

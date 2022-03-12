@@ -7,21 +7,28 @@
 }
 
 .button {
-  width: 100px;   
+  width: 150px;
   height: 60px;
   background-color: #006;
   color: #FFF;
 }
 
 .widebutton {
-  width: 200px;   
+  width: 300px;
   height: 60px;
   background-color: #006;
   color: #FFF;
 }
 
 .widewidebutton {
-  width: 300px;   
+  width: 450px;
+  height: 60px;
+  background-color: #006;
+  color: #FFF;
+}
+
+.widewidebutton2 {
+  width: 450px;
   height: 60px;
   background-color: #0A0;
   color: #FFF;
